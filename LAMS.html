@@ -1,11 +1,120 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <title>Royal Plaza - Login</title>
+        <link rel="stylesheet" href="loginstyles.css">
+
+
+        <script>
+
+
+        </script>
+
+    </head>
+
 <body>
-  <head> 
-  </head>
+
+    <nav class="navbar navbar-light navbar-expand-lg">
+        <div class="container">
+        <a class="navbar-brand" href="/"><img src="file:///Users/misha/Downloads/191-1915132_computer-logo-png-removebg-preview.png"></a>
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span>
+    
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="ml-auto navbar-nav">
+        <li class="shopping-cart cart-icon" style="display: none;">
+        <a class="nav-link" href="/cart">
+        <svg class="icon icon-lg">
+        <use href="#icon-assets"></use>
+        </svg>
+        
+        </a>
+        </li>
+        <!-- post login tools -->
+        <li class="nav-item">
+        <a class="nav-link btn-login-area active" href="/login">Login</a>
+        </li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </nav>
+    <div class="login-content">
+        <!--company logo-->
+        <div class="allcontentinside">
+        <div class="page-card-head">
+            <img class="app-logo"
+                src="file:///Users/misha/Downloads/191-1915132_computer-logo-png-removebg-preview.png">
+
+        <!--login for employee text-->
+            <h4>Login for Employee</h4>
+        </div>
+
+
+
+        <!-- email part -->
+        <form class="form-signin form-login" role="form">
+            <div class="page-card-body">
+                <div class="form-group">
+                    <label class="form-label-for-email" for="login_email">Email</label>
+                    <div class="email-field">
+                        <input type="text" id="login_email" class="form-control" placeholder="jane@example.com"
+                            required="" autofocus="">
+
+                    <svg class="field-icon email-icon" width="20" height="20"></svg>
+
+                    </div>
+                </div>
+
+                <!--password part-->
+
+                <div class="form-group">
+                    <label class="form-label-for-password" for="login_password">Password</label>
+                    <div class="password-field">
+                        <input type="password" id="login_password" class="form-control" placeholder="•••••"
+                            autocomplete="current-password" required="">
+
+                <!--show login password part-->
+                        <span toggle="#login_password" class="toggle-password text-muted">Show</span>
+                    </div>
+                </div>
+
+                <!--forgotpassword part-->
+                <p class="forgot-password-message">
+                    <a href="#forgot">Forgot Password?</a>
+                </p>
+            </div>
+
+            <!--button login-->
+            <div class="page-card-actions">
+                <button class="btn btn-sm btn-primary btn-block btn-login" type="submit">
+                    Login</button>
+
+            <!--dont have an account part-->
+
+            <div class="sign-up-message">
+                Don't have an account?
+                <a href="#signup">Sign up</a>
+            </div>
+
+
+            </div>
+        </form>
+    </div>
+
+
 
 
 </body>
+
 
 
 </html>
