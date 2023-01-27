@@ -22,7 +22,7 @@
 
         .tab-hr {
             overflow: hidden;
-            border: 1px  #ccc;
+            border: 1px #ccc;
             background-color: #f1f1f1;
         }
 
@@ -187,6 +187,90 @@
         tr:nth-child(even) {
             background-color: #dcdcdc;
         }
+
+
+
+        .inp-wrapper {
+            display: flex;
+            justify-content: flex-start;
+            gap: 1.2em;
+        }
+
+        #calendarlabel {
+            color: #626262;
+            display: block;
+            font-weight: 600;
+        }
+
+        input[type="date"] {
+            font-size: 12px;
+            padding: 1em;
+            color: #242831;
+            border: none;
+            outline: none;
+            border-radius: 0.2em;
+            margin-top: 0.6em;
+        }
+
+        ::-webkit-calendar-picker-indicator {
+            background-color: #6c87ff;
+            padding: 0.2em;
+            cursor: pointer;
+            border-radius: 0.1em;
+        }
+
+        .buttoncalendar {
+            display: block;
+            background-color: #6c87ff;
+            color: #16191e;
+            font-size: 12px;
+            margin: 45px;
+            border: none;
+            padding: 0.7em 2em;
+            border-radius: 0.3em;
+            font-weight: 600;
+            
+
+           
+
+
+
+        }
+
+        #output {
+            background-color: transparent;
+            text-align: center;
+            padding: 1em;
+            color: #625858;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            position: relative;
+            bottom: 30px;
+            right: 315px;
+            margin-bottom: 1px;
+        }
+
+        #output span {
+            color: #3b4641;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        @media screen and (max-width: 550px) {
+            .container {
+                padding: 4em 2em;
+            }
+
+            .inp-wrapper {
+                flex-direction: column;
+            }
+
+            .date-wrapper {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 
@@ -242,12 +326,6 @@
                     <label for="employee-id">Employee ID:</label>
                     <input type="text" id="employee-id" required>
 
-                    <label for="start-date">From Date:</label>
-                    <input type="date" id="start-date" required>
-
-                    <label for="end-date">To Date:</label>
-                    <input type="date" id="end-date" required>
-
                     <label for="leave-type">Leave Type:</label>
                     <select id="leave-type" required>
                         <option value="vacation">Vacation Leave</option>
@@ -259,6 +337,23 @@
                         <option value="other">Other</option>
                     </select>
 
+                    <div class="inp-wrapper">
+                        <div class="date-wrapper">
+                          <label id="calendarlabel" for="date-1">Start Date</label>
+                          <input type="date" id="date-1" />
+                        </div>
+                        <div class="date-wrapper">
+                          <label id="calendarlabel" for="date-2">End Date</label>
+                          <input type="date" id="date-2" />
+                        </div>
+                        <div>
+                        <button class="buttoncalendar" type="button" id="submit">Apply date</button>
+                        <div id="output">Select the dates to get started</div>
+                    </div>
+                      </div>
+
+                      
+
 
                     <label for="comments">Additional Reasons:</label>
                     <textarea id="comments"></textarea>
@@ -268,50 +363,53 @@
 
             </div>
         </div>
+    </div>
+
+    <div id="My_Leave" class="tabcontent">
+        <h3>My Leaves</h3>
+
+
+
+
+    </div>
+
+    <div id="Leave_Calendar" class="tabcontent">
+        <h3>Calendar</h3>
+        <p>This is the calendar</p>
+    </div>
+
+    <div id="profile" class="tabcontent">
+        <h3>Profile</h3>
+        <p>This is your profile</p>
+    </div>
+
+    <div id="Logout" class="tabcontent">
+        <h3>Logout</h3>
+        <p>This is where you logout</p>
+    </div>
+
+
+    <div class="topnav">
+
+        <div id="Notification" class="tabcontent">
+            <h3>notification</h3>
+            <p>This is Home :)</p>
         </div>
 
-        <div id="My_Leave" class="tabcontent">
-            <h3>My Leaves</h3>
-
-            </div>
-
-        <div id="Leave_Calendar" class="tabcontent">
-            <h3>Calendar</h3>
-            <p>This is the calendar</p>
+        <div id="Employee" class="tabcontent">
+            <h3>Employee</h3>
+            <p>Employee Interface</p>
         </div>
 
-        <div id="profile" class="tabcontent">
-            <h3>Profile</h3>
-            <p>This is your profile</p>
+        <div id="Manager" class="tabcontent">
+            <h3>Manager</h3>
+            <p>Manager Interface</p>
         </div>
 
-        <div id="Logout" class="tabcontent">
-            <h3>Logout</h3>
-            <p>This is where you logout</p>
-        </div>
-
-
-        <div class="topnav">
-
-            <div id="Notification" class="tabcontent">
-                <h3>notification</h3>
-                <p>This is Home :)</p>
-            </div>
-
-            <div id="Employee" class="tabcontent">
-                <h3>Employee</h3>
-                <p>Employee Interface</p>
-            </div>
-
-            <div id="Manager" class="tabcontent">
-                <h3>Manager</h3>
-                <p>Manager Interface</p>
-            </div>
-
-            <div id="Admin" class="tabcontent">
-                <h3>Admin</h3>
-                <p>Admin Interface</p>
-                <div>
+        <div id="Admin" class="tabcontent">
+            <h3>Admin</h3>
+            <p>Admin Interface</p>
+            <div>
                 <form id="leave-status-form">
                     <table>
                         <tr>
@@ -324,7 +422,7 @@
                             <th>Paid</th>
                             <th>Status</th>
                         </tr>
-    
+
                         <tr>
                             <td>Your Name</td>
                             <td>Your Id</td>
@@ -335,7 +433,7 @@
                             <td> unpaid </td>
                             <td> accepted</td>
                         </tr>
-    
+
                         <tr>
                             <td>Your Name</td>
                             <td>Your Id</td>
@@ -346,8 +444,8 @@
                             <td> unpaid </td>
                             <td> accepted</td>
                         </tr>
-    
-    
+
+
                         <tr>
                             <td>Your Name</td>
                             <td>Your Id</td>
@@ -358,9 +456,9 @@
                             <td> unpaid </td>
                             <td> accepted</td>
                         </tr>
-    
-    
-    
+
+
+
                         <tr>
                             <td>Your Name</td>
                             <td>Your Id</td>
@@ -371,8 +469,8 @@
                             <td> unpaid </td>
                             <td> accepted</td>
                         </tr>
-    
-    
+
+
                         <tr>
                             <td>Your Name</td>
                             <td>Your Id</td>
@@ -383,8 +481,8 @@
                             <td> unpaid </td>
                             <td> accepted</td>
                         </tr>
-    
-    
+
+
                         <tr>
                             <td>Your Name</td>
                             <td>Your Id</td>
@@ -395,8 +493,8 @@
                             <td> unpaid </td>
                             <td> accepted</td>
                         </tr>
-    
-    
+
+
                         <tr>
                             <td>Your Name</td>
                             <td>Your Id</td>
@@ -408,39 +506,68 @@
                             <td> accepted</td>
                         </tr>
                     </table>
-    
-    
-    
+
+
+
                 </form>
-    
+
             </div>
-            </div>
+        </div>
 
 
-            <script>
+        <script>
 
-                function openCity(evt, cityName) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByClassName("tabcontent");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].style.display = "none";
-                    }
-                    tablinks = document.getElementsByClassName("tablinks");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    }
-                    document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+
+            function myFunction() {
+                var x = document.getElementById("myBtn").type = "submit";
+                document.getElementById("demo").innerHTML = "The 'Reset' button now works as it should.";
+            }
+
+            <!-- Script -->
+            //Declaring and initializing variables
+            let submit = document.getElementById("submit");
+            let output = document.getElementById("output");
+
+            submit.addEventListener("click", () => {
+                //Create a Date object from input value
+                let date1 = new Date(document.getElementById("date-1").value);
+                let date2 = new Date(document.getElementById("date-2").value);
+
+                //Check if the input dates are valid
+                //If valid calculate the difference
+                if (date1.getTime() && date2.getTime()) {
+                    //Calculate difference in time using getTime function
+                    //getTime calculates number of years since January 1,1970
+                    let timeDifference = date2.getTime() - date1.getTime();
+
+                    //Since this value is in milliseconds we need to convert it into days
+                    //We want the difference to be a non-negative number. Hence we use Math.abs()
+                    let dayDifference = Math.abs(timeDifference / (1000 * 3600 * 24));
+                    output.innerHTML = `You applied <span>${dayDifference}</span> days of leaves`;
                 }
 
-                // Get the element with id="defaultOpen" and click on it
-                document.getElementById("defaultOpen").click();
-
-                function myFunction() {
-                    var x = document.getElementById("myBtn").type = "reset";
-                    document.getElementById("demo").innerHTML = "The 'Reset' button now works as it should.";
+                //Else display that the input is valid
+                else {
+                    output.innerHTML = "Please select a valid date";
                 }
-            </script>
+            });
+        </script>
 
 </body>
 
