@@ -20,6 +20,31 @@
             text-align: center;
         }
 
+        .topnav {
+            overflow: hidden;
+            background-color: transparent;
+
+        }
+
+        .topnav a {
+            float: right;
+            color: #413131;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #9fc8ec;
+            color: white;
+        }
+
         /* Style the tab */
         .tab {
             margin-top: 10px;
@@ -74,56 +99,94 @@
             margin-left: 50px;
         }
 
-    #leave-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #cfe2f3;
-    border-radius: 0.5rem;
-    padding-top: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        #leave-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #cfe2f3;
+            border-radius: 0.5rem;
+            padding-top: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  }
-  
-  #leave-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 100;
-    color: #405d76;
-  }
-  
-  #leave-form input[type="text"], #leave-form select, #leave-form textarea {
-    width: 100%;
-    padding: 12px 20px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    border-radius: 0.5rem;
-    border: 1px solid transparent;
-  }
-  
-  #leave-form input[type="submit"] {
-    background-color: #577d9f;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  #leave-form input[type="submit"]:hover {
-    background-color: #45a049;
-  }
+        }
 
-  #start-date, #end-date{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 20px;
-  }
-  
-  
+        #leave-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 100;
+            color: #405d76;
+        }
+
+        #leave-form input[type="text"],
+        #leave-form select,
+        #leave-form textarea {
+            width: 100%;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border-radius: 0.5rem;
+            border: 1px solid transparent;
+        }
+
+        #leave-form input[id="myBtn"] {
+            background-color: #577d9f;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+
+
+        }
+
+
+
+        #leave-form input[id="myBtn"]:hover {
+            background-color: #45a049;
+        }
+
+        #start-date,
+        #end-date {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #ddd;
+        }
+
+        th {
+
+            width: 2176px;
+            height: 15px;
+            background: #ff8d8d;
+            border: #000000;
+
+        }
+
+        td {
+            width: 2176px;
+            height: 20px;
+
+
+        }
+
+        th,
+        td {
+            text-align: center;
+            padding: 16px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dcdcdc;
+        }
     </style>
 </head>
 
@@ -131,6 +194,13 @@
 
     <div class="header">
         <h1>company name</h1>
+
+        <div class="topnav">
+            <a class="active" href="#home">Notification</a>
+            <a href="#employee">Employee</a>
+            <a href="#manager">Manager</a>
+            <a href="#admin">Admin</a>
+        </div>
     </div>
     <div class="tab">
         <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
@@ -138,7 +208,7 @@
         <button class="tablinks" onclick="openCity(event, 'Apply_Leave')">Apply Leave</button>
 
 
-        <button class="tablinks" onclick="openCity(event, 'My_Leave')">My Leave</button>
+        <button class="tablinks" onclick="openCity(event, 'My_Leave')">My Leaves</button>
 
 
         <button class="tablinks" onclick="openCity(event, 'Leave_Calendar')">Leave Calendar</button>
@@ -165,10 +235,10 @@
                     <label for="employee-id">Employee ID:</label>
                     <input type="text" id="employee-id" required>
 
-                    <label for="start-date">Start Date:</label>
+                    <label for="start-date">From Date:</label>
                     <input type="date" id="start-date" required>
 
-                    <label for="end-date">End Date:</label>
+                    <label for="end-date">To Date:</label>
                     <input type="date" id="end-date" required>
 
                     <label for="leave-type">Leave Type:</label>
@@ -182,60 +252,161 @@
                         <option value="other">Other</option>
                     </select>
 
-                    <label for="comments">Additional Comments:</label>
+
+                    <label for="comments">Additional Reasons:</label>
                     <textarea id="comments"></textarea>
 
-                    <input type="submit" value="Apply for Leave">
-
+                    <input id="myBtn" type="submit" value="Apply Leave">
+                    <input id="myBtn" type="reset" value="Cancel">
 
             </div>
-            </div>
+        </div>
 
-            <div id="My_Leave" class="tabcontent">
-                <h3>My Leave</h3>
-                <form id="leave-status-form">
-                    <label for="leave-request-number">Leave Request Number:</label>
-                    <input type="text" id="leave-request-number" name="leave-request-number">
-                    <button type="submit" id="check-status-button">Check Status</button>
-                  </form>
-                  
-            </div>
+        <div id="My_Leave" class="tabcontent">
+            <h3>My Leaves</h3>
+            <form id="leave-status-form">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Employee ID</th>
+                        <th>From Date</th>
+                        <th>To Date</th>
+                        <th>No of Days</th>
+                        <th>Leave Type</th>
+                        <th>Paid</th>
+                        <th>Status</th>
+                    </tr>
 
-            <div id="Leave_Calendar" class="tabcontent">
-                <h3>Calendar</h3>
-                <p>This is the calendar</p>
-            </div>
+                    <tr>
+                        <td>Your Name</td>
+                        <td>Your Id</td>
+                        <td>the date</td>
+                        <td> the date</td>
+                        <td> 1 days</td>
+                        <td> sick leave</td>
+                        <td> unpaid </td>
+                        <td> accepted</td>
+                    </tr>
 
-            <div id="profile" class="tabcontent">
-                <h3>Profile</h3>
-                <p>This is your profile</p>
-            </div>
+                    <tr>
+                        <td>Your Name</td>
+                        <td>Your Id</td>
+                        <td>the date</td>
+                        <td> the date</td>
+                        <td> 1 days</td>
+                        <td> sick leave</td>
+                        <td> unpaid </td>
+                        <td> accepted</td>
+                    </tr>
 
-            <div id="Logout" class="tabcontent">
-                <h3>Logout</h3>
-                <p>This is where you logout</p>
-            </div>
+
+                    <tr>
+                        <td>Your Name</td>
+                        <td>Your Id</td>
+                        <td>the date</td>
+                        <td> the date</td>
+                        <td> 1 days</td>
+                        <td> sick leave</td>
+                        <td> unpaid </td>
+                        <td> accepted</td>
+                    </tr>
 
 
-            <script>
 
-                function openCity(evt, cityName) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByClassName("tabcontent");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].style.display = "none";
-                    }
-                    tablinks = document.getElementsByClassName("tablinks");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    }
-                    document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
+                    <tr>
+                        <td>Your Name</td>
+                        <td>Your Id</td>
+                        <td>the date</td>
+                        <td> the date</td>
+                        <td> 1 days</td>
+                        <td> sick leave</td>
+                        <td> unpaid </td>
+                        <td> accepted</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Your Name</td>
+                        <td>Your Id</td>
+                        <td>the date</td>
+                        <td> the date</td>
+                        <td> 1 days</td>
+                        <td> sick leave</td>
+                        <td> unpaid </td>
+                        <td> accepted</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Your Name</td>
+                        <td>Your Id</td>
+                        <td>the date</td>
+                        <td> the date</td>
+                        <td> 1 days</td>
+                        <td> sick leave</td>
+                        <td> unpaid </td>
+                        <td> accepted</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Your Name</td>
+                        <td>Your Id</td>
+                        <td>the date</td>
+                        <td> the date</td>
+                        <td> 1 days</td>
+                        <td> sick leave</td>
+                        <td> unpaid </td>
+                        <td> accepted</td>
+                    </tr>
+                </table>
+
+
+
+            </form>
+
+        </div>
+
+        <div id="Leave_Calendar" class="tabcontent">
+            <h3>Calendar</h3>
+            <p>This is the calendar</p>
+        </div>
+
+        <div id="profile" class="tabcontent">
+            <h3>Profile</h3>
+            <p>This is your profile</p>
+        </div>
+
+        <div id="Logout" class="tabcontent">
+            <h3>Logout</h3>
+            <p>This is where you logout</p>
+        </div>
+
+
+        <script>
+
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
                 }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
 
-                // Get the element with id="defaultOpen" and click on it
-                document.getElementById("defaultOpen").click();
-            </script>
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+
+            function myFunction() {
+                var x = document.getElementById("myBtn").type = "reset";
+                document.getElementById("demo").innerHTML = "The 'Reset' button now works as it should.";
+            }
+        </script>
 
 </body>
 
