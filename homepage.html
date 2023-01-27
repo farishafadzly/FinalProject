@@ -20,29 +20,32 @@
             text-align: center;
         }
 
-        .topnav {
+        .tab-hr {
             overflow: hidden;
-            background-color: transparent;
-
+            border: 1px  #ccc;
+            background-color: #f1f1f1;
         }
 
-        .topnav a {
+        /* Style the buttons inside the tab */
+        .tab-hr button {
+            background-color: inherit;
             float: right;
-            color: #413131;
-            text-align: center;
+            border: none;
+            outline: none;
+            cursor: pointer;
             padding: 14px 16px;
-            text-decoration: none;
+            transition: 0.3s;
             font-size: 17px;
         }
 
-        .topnav a:hover {
+        /* Change background color of buttons on hover */
+        .tab-hr button:hover {
             background-color: #ddd;
-            color: black;
         }
 
-        .topnav a.active {
-            background-color: #9fc8ec;
-            color: white;
+        /* Create an active/current tablink class */
+        .tab-hr button.active {
+            background-color: #ccc;
         }
 
         /* Style the tab */
@@ -157,24 +160,19 @@
         }
 
         table {
-            border-collapse: collapse;
+
             border-spacing: 0;
             border: 1px solid #ddd;
+            border-radius: 0.5em;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: inset;
         }
 
         th {
-
-            width: 2176px;
-            height: 15px;
             background: #ff8d8d;
             border: #000000;
-
-        }
-
-        td {
-            width: 2176px;
-            height: 20px;
-
 
         }
 
@@ -182,6 +180,8 @@
         td {
             text-align: center;
             padding: 16px;
+            font-size: 17px;
+
         }
 
         tr:nth-child(even) {
@@ -195,12 +195,19 @@
     <div class="header">
         <h1>company name</h1>
 
-        <div class="topnav">
-            <a class="active" href="#home">Notification</a>
-            <a href="#employee">Employee</a>
-            <a href="#manager">Manager</a>
-            <a href="#admin">Admin</a>
+        <div class="tab-hr">
+            <button class="tablinks" onclick="openCity(event, 'Notification')">Notification</button>
+
+            <button class="tablinks" onclick="openCity(event, 'Employee')">Employee</button>
+
+
+            <button class="tablinks" onclick="openCity(event, 'Manager')">Manager</button>
+
+
+            <button class="tablinks" onclick="openCity(event, 'Admin')">Admin</button>
+
         </div>
+
     </div>
     <div class="tab">
         <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
@@ -261,111 +268,12 @@
 
             </div>
         </div>
+        </div>
 
         <div id="My_Leave" class="tabcontent">
             <h3>My Leaves</h3>
-            <form id="leave-status-form">
-                <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>Employee ID</th>
-                        <th>From Date</th>
-                        <th>To Date</th>
-                        <th>No of Days</th>
-                        <th>Leave Type</th>
-                        <th>Paid</th>
-                        <th>Status</th>
-                    </tr>
 
-                    <tr>
-                        <td>Your Name</td>
-                        <td>Your Id</td>
-                        <td>the date</td>
-                        <td> the date</td>
-                        <td> 1 days</td>
-                        <td> sick leave</td>
-                        <td> unpaid </td>
-                        <td> accepted</td>
-                    </tr>
-
-                    <tr>
-                        <td>Your Name</td>
-                        <td>Your Id</td>
-                        <td>the date</td>
-                        <td> the date</td>
-                        <td> 1 days</td>
-                        <td> sick leave</td>
-                        <td> unpaid </td>
-                        <td> accepted</td>
-                    </tr>
-
-
-                    <tr>
-                        <td>Your Name</td>
-                        <td>Your Id</td>
-                        <td>the date</td>
-                        <td> the date</td>
-                        <td> 1 days</td>
-                        <td> sick leave</td>
-                        <td> unpaid </td>
-                        <td> accepted</td>
-                    </tr>
-
-
-
-                    <tr>
-                        <td>Your Name</td>
-                        <td>Your Id</td>
-                        <td>the date</td>
-                        <td> the date</td>
-                        <td> 1 days</td>
-                        <td> sick leave</td>
-                        <td> unpaid </td>
-                        <td> accepted</td>
-                    </tr>
-
-
-                    <tr>
-                        <td>Your Name</td>
-                        <td>Your Id</td>
-                        <td>the date</td>
-                        <td> the date</td>
-                        <td> 1 days</td>
-                        <td> sick leave</td>
-                        <td> unpaid </td>
-                        <td> accepted</td>
-                    </tr>
-
-
-                    <tr>
-                        <td>Your Name</td>
-                        <td>Your Id</td>
-                        <td>the date</td>
-                        <td> the date</td>
-                        <td> 1 days</td>
-                        <td> sick leave</td>
-                        <td> unpaid </td>
-                        <td> accepted</td>
-                    </tr>
-
-
-                    <tr>
-                        <td>Your Name</td>
-                        <td>Your Id</td>
-                        <td>the date</td>
-                        <td> the date</td>
-                        <td> 1 days</td>
-                        <td> sick leave</td>
-                        <td> unpaid </td>
-                        <td> accepted</td>
-                    </tr>
-                </table>
-
-
-
-            </form>
-
-        </div>
+            </div>
 
         <div id="Leave_Calendar" class="tabcontent">
             <h3>Calendar</h3>
@@ -383,30 +291,156 @@
         </div>
 
 
-        <script>
+        <div class="topnav">
 
-            function openCity(evt, cityName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
+            <div id="Notification" class="tabcontent">
+                <h3>notification</h3>
+                <p>This is Home :)</p>
+            </div>
+
+            <div id="Employee" class="tabcontent">
+                <h3>Employee</h3>
+                <p>Employee Interface</p>
+            </div>
+
+            <div id="Manager" class="tabcontent">
+                <h3>Manager</h3>
+                <p>Manager Interface</p>
+            </div>
+
+            <div id="Admin" class="tabcontent">
+                <h3>Admin</h3>
+                <p>Admin Interface</p>
+                <div>
+                <form id="leave-status-form">
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Employee ID</th>
+                            <th>From Date</th>
+                            <th>To Date</th>
+                            <th>No of Days</th>
+                            <th>Leave Type</th>
+                            <th>Paid</th>
+                            <th>Status</th>
+                        </tr>
+    
+                        <tr>
+                            <td>Your Name</td>
+                            <td>Your Id</td>
+                            <td>the date</td>
+                            <td> the date</td>
+                            <td> 1 days</td>
+                            <td> sick leave</td>
+                            <td> unpaid </td>
+                            <td> accepted</td>
+                        </tr>
+    
+                        <tr>
+                            <td>Your Name</td>
+                            <td>Your Id</td>
+                            <td>the date</td>
+                            <td> the date</td>
+                            <td> 1 days</td>
+                            <td> sick leave</td>
+                            <td> unpaid </td>
+                            <td> accepted</td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>Your Name</td>
+                            <td>Your Id</td>
+                            <td>the date</td>
+                            <td> the date</td>
+                            <td> 1 days</td>
+                            <td> sick leave</td>
+                            <td> unpaid </td>
+                            <td> accepted</td>
+                        </tr>
+    
+    
+    
+                        <tr>
+                            <td>Your Name</td>
+                            <td>Your Id</td>
+                            <td>the date</td>
+                            <td> the date</td>
+                            <td> 1 days</td>
+                            <td> sick leave</td>
+                            <td> unpaid </td>
+                            <td> accepted</td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>Your Name</td>
+                            <td>Your Id</td>
+                            <td>the date</td>
+                            <td> the date</td>
+                            <td> 1 days</td>
+                            <td> sick leave</td>
+                            <td> unpaid </td>
+                            <td> accepted</td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>Your Name</td>
+                            <td>Your Id</td>
+                            <td>the date</td>
+                            <td> the date</td>
+                            <td> 1 days</td>
+                            <td> sick leave</td>
+                            <td> unpaid </td>
+                            <td> accepted</td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td>Your Name</td>
+                            <td>Your Id</td>
+                            <td>the date</td>
+                            <td> the date</td>
+                            <td> 1 days</td>
+                            <td> sick leave</td>
+                            <td> unpaid </td>
+                            <td> accepted</td>
+                        </tr>
+                    </table>
+    
+    
+    
+                </form>
+    
+            </div>
+            </div>
+
+
+            <script>
+
+                function openCity(evt, cityName) {
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+                    document.getElementById(cityName).style.display = "block";
+                    evt.currentTarget.className += " active";
                 }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+                // Get the element with id="defaultOpen" and click on it
+                document.getElementById("defaultOpen").click();
+
+                function myFunction() {
+                    var x = document.getElementById("myBtn").type = "reset";
+                    document.getElementById("demo").innerHTML = "The 'Reset' button now works as it should.";
                 }
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
-
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("defaultOpen").click();
-
-            function myFunction() {
-                var x = document.getElementById("myBtn").type = "reset";
-                document.getElementById("demo").innerHTML = "The 'Reset' button now works as it should.";
-            }
-        </script>
+            </script>
 
 </body>
 
