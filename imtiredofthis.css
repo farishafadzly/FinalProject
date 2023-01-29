@@ -202,7 +202,7 @@ body {
     background-clip: border-box;
     border: 0 solid #dfe3e7;
     border-radius: 0.267rem;
-    box-shadow: 1px 1px 10px 1px rgb(25 42 70 / 13%);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     margin-bottom: 2.2rem;
     text-align: center;
     padding: 20px;
@@ -290,6 +290,7 @@ td {
     padding: 10px;
     text-transform: uppercase;
     font-weight: 600;
+    
 
 }
 
@@ -335,4 +336,29 @@ input[type=submit] {
     font-size: .855rem;
     border-radius: 0.267rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+hr.solid{
+    border: 1px solid rgb(113, 110, 110);
+   
+}
+
+.manage-employee > td{
+    color: rgb(151, 151, 151);
+    text-transform:initial;
+    font-size: 17px;
+    font-weight: 200;
+    text-align: center;
+    
+}
+.tr-header > td{
+    
+    text-align: center;
+    
+}
+   
+.employeedata{
+    position: relative;
+    left: 10vh;
+    top: 1vh;
 }
