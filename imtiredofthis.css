@@ -361,4 +361,37 @@ hr.solid{
     position: relative;
     left: 10vh;
     top: 1vh;
+    
 }
+
+.manage-leave > td{
+    color: rgb(151, 151, 151);
+    text-transform:initial;
+    font-size: 17px;
+    font-weight: 200;
+    text-align: left;
+    
+}
+
+.btn1, .btn2{
+    background-color: #5e8966;
+    width: 120px;
+    border-color: #436149;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align:middle;
+    padding: 0.467rem 1.5rem;
+    font-size: .855rem;
+    border-radius: 0.267rem;
+   position: relative;
+   bottom: -2vh;
+   left: 30vh;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+
+
+ 
