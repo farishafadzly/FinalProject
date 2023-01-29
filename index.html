@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="mainstyles.css">
+</head>
+
+<body>
+
+    <div class="top">
+        <a href="#" class="notification">
+          <span>Inbox</span>
+          <span class="badge">3</span>
+        </a>
+        
+        <div class="dropdown-admin">
+                <button onclick="myFunction()" class="dropbtn-admin">Hi, Admin</button>
+                <div id="myDropdownAdmin" class="dropdown-content-admin">
+                    <a href="#home">Account</a>
+                    <a href="#about">Setting</a>
+                    <a href="#contact">Logout</a>
+                
+            </div>
+        </div>
+        </div>
+    
+        
+
+    <div class="sidenav">
+
+        <div class="sidebar-header" style="height: 50px;margin-top: 30px">
+            <i class="fa fa-users text-success me-4"></i>
+            <span>ELMS</span>
+        </div>
+        <a href="#about">Dashboard</a>
+
+        <button class="dropdown-btn">Department
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Add Department</a>
+            <a href="#">Manage Department</a>
+        </div>
+
+        <button class="dropdown-btn">Employee
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Add Employee</a>
+            <a href="#">Manage employee</a>
+        </div>
+
+        <button class="dropdown-btn">Leaves Type
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Add Leaves Types</a>
+            <a href="#">Manage Leaves Types</a>
+        </div>
+
+        <button class="dropdown-btn">Leave Management
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">All Leaves</a>
+            <a href="#">Pending Leaves</a>
+            <a href="#">Approve Leaves</a>
+            <a href="#">Not Approve Leaves</a>
+        </div>
+
+        <button class="dropdown-btn">Users
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Add User</a>
+            <a href="#">Manage User</a>
+        </div>
+    </div>
+
+    <div class="main">
+        
+        <h2>Dashboard</h2>
+
+        <div class="row">
+            <div class="column">
+                <div class="card-body">
+                    <div class="dashboard-page">
+                        <i class="material-icons" style="font-size:48px;color:#b271cb">group</i>
+                        <h4>Employees</h4>
+                        <div class="inside-dashboard-page">
+                            <h3>55</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card-body">
+                    <div class="dashboard-page">
+                        <i class="material-icons" style="font-size:48px;color:rgb(242, 175, 66);">event</i>
+                        <h4>Leaves</h4>
+                        <div class="inside-dashboard-page">
+                            <h3>25</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="card-body">
+                    <div class="dashboard-page">
+                        <i class="material-icons" style="font-size:48px;color:rgb(21, 230, 21);">done_all</i>
+                        <h4>Approved</h4>
+                        <div class="inside-dashboard-page">
+                            <h3>34</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <div class="card-body">
+                    <div class="dashboard-page">
+                        <i class="material-icons" style="font-size:48px;color:rgb(252, 61, 61);">disabled_by_default</i>
+                        <h4>Cancelled</h4>
+                        <div class="inside-dashboard-page">
+                            <h3>12</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card-body">
+                    <div class="dashboard-page">
+                        <i class="material-icons" style="font-size:48px;color:rgb(0, 104, 174);">pending_actions</i>
+                        <h4>Pending</h4>
+                        <div class="inside-dashboard-page">
+                            <h3>15</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdownAdmin").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn-admin')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content-admin");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
