@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="imtiredofthis.css">
+</head>
+
+<body>
+
+    <div class="top">
+        <a href="#" class="notification">
+            <span>Inbox</span>
+            <span class="badge">3</span>
+        </a>
+
+        <div class="dropdown-admin">
+            <button onclick="myFunction()" class="dropbtn-admin">Hi, Admin</button>
+            <div id="myDropdownAdmin" class="dropdown-content-admin">
+                <a href="#home">Account</a>
+                <a href="#about">Setting</a>
+                <a href="#contact">Logout</a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="sidenav">
+
+        <div class="sidebar-header" style="height: 50px;margin-top: 30px">
+            <i class="fa fa-users text-success me-4"></i>
+            <span>ELMS</span>
+        </div>
+        <a href="index.html">Dashboard</a>
+
+        <button class="dropdown-btn">Department
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Add Department</a>
+            <a href="#">Manage Department</a>
+        </div>
+
+        <button class="dropdown-btn">Employee
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="add_employee.html">Add Employee</a>
+            <a href="manage_employee.html">Manage employee</a>
+        </div>
+
+        <button class="dropdown-btn">Leaves
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            
+            <a href="manage_leave.html">Manage Leaves</a>
+            <a href="#">All Leaves</a>
+            <a href="#">Pending Leaves</a>
+            <a href="#">Approve Leaves</a>
+            <a href="#">Not Approve Leaves</a>
+        </div>
+
+        <button class="dropdown-btn">Users
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="add_user.html">Add User</a>
+            <a href="manage_user.html">Manage User</a>
+        </div>
+    </div>
+
+
+
+    <div class="main">
+        <div class="employeedata">
+            <h3>Manage User</h3>
+            <div class="card-body">
+
+
+                <table>
+                    <tr class="tr-header">
+                        <td>Full Name</td>
+                        <td>Contact</td>
+                        <td>Category</td>
+                        <td>Status</td>
+                        <td>Action</td>
+                    </tr>
+
+
+                    <tr class="manage-user">
+
+                        <td>Melanie Blake</td>
+                        <td>01123456789</td>
+                        <td>Staff</td>
+                        <td><i class="material-icons" style="font-size:48px;color:rgb(21, 230, 21);">toggle_on</i></td>
+                        <td><i class="material-icons" style="font-size:17px;color:rgb(100, 100, 100);">edit</i>
+                            <i class="material-icons" style="font-size:17px;color:rgb(255, 0, 0);">delete_sweep</i>
+                        </td>
+
+                    </tr>
+
+                    <tr class="manage-user">
+                
+                        <td>Carter Warren</td>
+                        <td>0119876543</td>
+                        <td>Admin</td>
+                        <td> <i class="material-icons" style="font-size:48px;color:rgb(144, 144, 144);">toggle_off</i>
+                        </td>
+                        <td> <i class="material-icons" style="font-size:17px;color:rgb(100, 100, 100);">edit</i>
+                            <i class="material-icons" style="font-size:17px;color:rgb(255, 0, 0);">delete_sweep</i>
+                        </td>
+
+                    </tr>
+
+                    <tr class="manage-user">
+                       
+                        <td>Lee Rachel</td>
+                        <td>013987652</td>
+                        <td>Staff</td>
+                        <td> <i class="material-icons" style="font-size:48px;color:rgb(21, 230, 21);">toggle_on</i></td>
+                        <td> <i class="material-icons" style="font-size:17px;color:rgb(100, 100, 100);">edit</i>
+                            <i class="material-icons" style="font-size:17px;color:rgb(255, 0, 0);">delete_sweep</i>
+                        </td>
+
+                    </tr>
+
+                    <tr class="manage-user">
+                        
+                        <td>Nevaeh Keller</td>
+                        <td>015765435</td>
+                        <td>Manager</td>
+                        <td> <i class="material-icons" style="font-size:48px;color:rgb(21, 230, 21);">toggle_on</i></td>
+                        <td> <i class="material-icons" style="font-size:17px;color:rgb(100, 100, 100);">edit</i>
+                            <i class="material-icons" style="font-size:17px;color:rgb(255, 0, 0);">delete_sweep</i>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdownAdmin").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn-admin')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content-admin");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
