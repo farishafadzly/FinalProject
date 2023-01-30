@@ -1,0 +1,420 @@
+html,
+body {
+    max-width: 100%;
+
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+
+
+}
+
+
+.top {
+    float: right;
+}
+
+.notification {
+    background-color: rgb(255, 255, 255);
+    color: #818181;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    display: inline-block;
+    margin-right: 1px;
+}
+
+.notification:hover {
+    background: transparent;
+    color: #8FA998
+}
+
+.notification .badge {
+    position: absolute;
+    top: 0px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+}
+
+.dropbtn-admin {
+    background-color: transparent;
+    color: #818181;
+    padding: 14px;
+    font-size: 16px;
+    border: 0px;
+    cursor: pointer;
+
+}
+
+.dropbtn-admin:hover,
+.dropbtn:focus {
+    background-color: transparent;
+    color: #8FA998;
+}
+
+.dropdown-admin {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content-admin {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content-admin a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-admin a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: 210px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    border-right: 1px solid #eee;
+    box-shadow: 0 0 10px #ececec;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+
+
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a,
+.dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover,
+.dropdown-btn:hover {
+    color: #8FA998;
+    font-size: 18.5px;
+
+}
+
+/* Main content */
+.main {
+
+    width: 80%;
+    /* Same as the width of the sidenav */
+    font-size: 20px;
+    /* Increased text to enable scrolling */
+    position: absolute;
+    top: 10vh;
+    left: 20%;
+    overflow: hidden;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: #fff;
+    color: #9CBFA7;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #fff;
+    padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+    font-size: 12px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.sidebar-header {
+    position: relative;
+    right: -55px;
+    top: -10px;
+    font-size: 25px;
+    color: #8FA998;
+
+}
+
+
+
+
+
+
+
+.card-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid #dfe3e7;
+    border-radius: 0.267rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-bottom: 2.2rem;
+    text-align: center;
+    padding: 20px;
+    max-width: 80%;
+}
+
+
+
+h1,
+h4 {
+    margin-top: 10px;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #475f7b;
+    font-size: 25px;
+    padding-left: 9px;
+
+
+}
+
+
+.dashboard-page {
+    display: flex;
+    padding-left: 0px;
+    padding-top: 10px;
+    height: 120px;
+    width: auto;
+
+}
+
+.inside-dashboard-page {
+    color: blue;
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    position: relative;
+    left: -100px;
+    bottom: 10px;
+
+}
+
+/* Float three columns side by side */
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 20px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+    margin: 0 5vh 0 0;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+.table,
+tr,
+td {
+
+    color: #5e8966;
+    font-size: 15px;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    
+    
+
+}
+
+.form-body {
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+
+
+input[type=text],
+[type=email],
+[type=tel],
+[type=password]
+
+{
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 0.3em
+}
+
+select{
+    width: 100%;
+}
+
+input[type=number] {
+    width: 45px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 0.3em;
+
+
+}
+
+input[type=submit] {
+    background-color: #5e8966;
+    border-color: #436149;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align:middle;
+    float: right;
+    padding: 0.467rem 1.5rem;
+    font-size: .855rem;
+    border-radius: 0.267rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+hr.solid{
+    border: 1px solid rgb(113, 110, 110);
+   
+}
+
+.manage-employee, .add-employee, .manage-user{
+    table-layout: fixed;
+    width: 100%;
+}
+
+.manage-employee > td, 
+.manage-user > td {
+    color: rgb(151, 151, 151);
+    text-transform:initial;
+    font-size: 17px;
+    font-weight: 200;
+    text-align: center;
+    
+    
+}
+.tr-header > td{
+    
+    text-align: center; 
+   
+    
+}
+   
+.employeedata{
+    position: relative;
+    left: 10vh;
+    top: 1vh;
+    
+    
+}
+
+.manage-leave > td{
+    color: rgb(151, 151, 151);
+    text-transform:initial;
+    font-size: 17px;
+    font-weight: 200;
+    text-align: left;
+   
+}
+
+.btn1, .btn2{
+    background-color: #5e8966;
+    width: 120px;
+    border-color: #436149;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align:middle;
+    padding: 0.467rem 1.5rem;
+    font-size: .855rem;
+    border-radius: 0.267rem;
+   position: relative;
+   bottom: -2vh;
+   left: 30vh;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+
+
+.add-user-table{
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+
+ 
